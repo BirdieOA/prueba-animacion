@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+<svg viewBox="0 0 183 1056" fill="none" preserveAspectRatio="xMidYMax meet">
+<path d="M77.1033 0.100586V322.31C77.1033 322.31 30.037 355.148 35.4497 383.566C41.4042 414.828 78.8304 407.793 107.301 422.012C112.254 424.486 114.594 427.157 120.014 428.284C124.421 429.201 128.812 424.704 131.541 428.284C133.203 430.466 133.288 432.59 132.558 435.234C130.939 441.09 117.302 438.285 117.302 438.285C117.302 438.285 106.939 435.916 100.182 435.234C91.2149 434.328 85.9508 433.515 77.1033 435.234C32.1134 443.974 70.9055 502.925 91.8269 537.295C112.748 571.666 177.344 601.908 176.775 647.735C175.747 730.572 -18.1291 697.695 8.03822 776.297C15.0436 797.34 36.9083 817.476 54.1813 830.764C67.8873 841.308 77.1033 857.204 77.1033 874.497V991.236V1055.52" stroke="#D87F7F" stroke-width="11"/>
+</svg>
+
+
+
+    
+    </div>
+
+    <section class="one">
+      <h1 class="scroll" data-rate=".4" data-direction="vertical">Babushka</h1>
+    </section>
+    <section class="two">
+      <h1 class="scroll" data-rate=".2" data-direction="vertical">
+        muñecas rusas
+      </h1>
+      <p>artesanias</p>
+    </section>
+
+  <script>
+    let path = document.querySelector('path');
+    let pathLength = path.getTotalLength();
+    path.style.strokeDasharray = pathLength + ' ' + pathLength;
+    path.style.strokeDashoffset = pathLength;
+
+    window.addEventListener('scroll', () => {
+        var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+
+        var drawLength = pathLength * scrollPercentage;
+
+        path.style.strokeDashoffset = pathLength - drawLength;
+    });
+</script>
+
+  </body>
+</html>
